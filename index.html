@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<!--
+Trivia Quiz
+
+Copyright (c) 2026 Dominique Striekwold
+
+Licensed under the MIT License.
+See the LICENSE file in the repository for details.
+
+Built as part of a web development learning journey.
+-->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivia Quiz</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="page-layout">
+    <section class="quiz-app">
+      <div class="quiz-window-bar">
+        <span class="window-dot"></span>
+        <span class="window-dot"></span>
+        <span class="window-dot"></span>
+      </div>
+
+      <div class="quiz-content">
+        <header class="quiz-header">
+          <div class="quiz-meta">
+            <p id="progress">Question 1 / 5</p>
+            <p id="score">Score: 0</p>
+          </div>
+
+          <div class="score-bar-track" aria-hidden="true">
+            <div id="scoreBar" class="score-bar-fill"></div>
+          </div>
+
+          <h1>Trivia Quiz</h1>
+        </header>
+
+        <section class="question-panel">
+          <h2 id="question">Question text will appear here</h2>
+
+          <form id="quizForm" class="quiz-form">
+            <label class="answer-option">
+              <input type="radio" name="answer" value="0">
+              <span id="answerText0">Answer 1</span>
+            </label>
+
+            <label class="answer-option">
+              <input type="radio" name="answer" value="1">
+              <span id="answerText1">Answer 2</span>
+            </label>
+
+            <label class="answer-option">
+              <input type="radio" name="answer" value="2">
+              <span id="answerText2">Answer 3</span>
+            </label>
+
+            <label class="answer-option">
+              <input type="radio" name="answer" value="3">
+              <span id="answerText3">Answer 4</span>
+            </label>
+
+            <button id="submitBtn" class="submit-btn" type="submit">Submit</button>
+          </form>
+
+          <p id="feedback" class="feedback feedback-neutral"></p>
+
+          <button id="restartBtn" class="restart-btn" type="button">Restart Quiz</button>
+        </section>
+      </div>
+
+      <footer class="site-footer">
+        <p>© 2026 Dominique Striekwold • MIT License</p>
+        <p>Trivia Quiz — built as part of a web development learning journey</p>
+      </footer>
+    </section>
+  </main>
+
+  <script src="js/trivia.js"></script>
+</body>
+</html>

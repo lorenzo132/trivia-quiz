@@ -1,0 +1,23 @@
+# Security Policy
+
+## Supported Versions
+
+This project is a small static web application built with HTML, CSS, and JavaScript.
+
+There are currently no versioned releases.  
+The latest version available in the repository is the only supported version.
+
+---
+
+## Reporting a Vulnerability
+
+If you discover a security issue related to this project, please report it by opening an issue on this repository.
+
+Please include:
+
+- a clear description of the issue  
+- steps to reproduce the problem  
+- the affected file or feature, if known  
+- any relevant screenshots or code references  
+
+Thank you for helping improve the security and reliability of this project.
