@@ -124,7 +124,7 @@ Contains:
 
 ---
 
-## How It Works
+# How It Works
 
 All quiz questions are stored in a JavaScript array:
 
@@ -159,7 +159,7 @@ This demonstrates basic application state management and dynamic UI updates.
 
 ---
 
-## Debugging
+# Debugging
 
 During development, console.log() statements are used to display:
 
@@ -181,7 +181,7 @@ This helps understand how the JavaScript logic controls the quiz flow step by st
 
 ---
 
-## Future Improvements
+# Future Improvements
 
 Possible future upgrades:
 
@@ -209,7 +209,7 @@ difficulty levels
 
 ---
 
-## Status
+# Status
 
 Learning project — actively improving while studying web development.
 
@@ -223,7 +223,7 @@ Created as part of a personal web development learning journey.
 
 ---
 
-## Attribution
+# Attribution
 
 Original project created by Dominique Striekwold.
 
@@ -232,6 +232,6 @@ by linking to the original repository.
 
 ---
 
-## License
+# License
 
 This project is licensed under the MIT License — see the LICENSE file for details.
