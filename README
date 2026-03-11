@@ -2,22 +2,17 @@
 
 # Trivia Quiz
 
-A small project that builds an interactive **Trivia Quiz application** using **HTML, CSS, and JavaScript**.
+An interactive **Trivia Quiz web application** built using **HTML, CSS, and JavaScript**.
 
-The idea for this app came from seeing a similar concept in the **Mimo learning platform**, which inspired the creation of a personal version to practice web development skills and strengthen understanding of core JavaScript concepts.
+This project was inspired by a similar concept seen in the **Mimo learning platform** and was recreated as a personal learning exercise to deepen understanding of **core JavaScript concepts**, **DOM manipulation**, and **responsive UI design**.
 
-The goal of this project is twofold:
-
-1. **Learning exercise** while studying web development.
-2. Building a **fully styled interactive quiz application** with dynamic question handling and user feedback.
-
-The application demonstrates how to structure a simple web app, manage quiz state, and create a modern responsive user interface.
+The application demonstrates how to build a fully functional quiz system from scratch **without using frameworks**.
 
 ---
 
 # Live Demo
 
-The Trivia Quiz can be viewed here:
+View the live project here:
 
 https://blackravenwolf.github.io/trivia-quiz/
 
@@ -25,87 +20,94 @@ https://blackravenwolf.github.io/trivia-quiz/
 
 # Purpose
 
-This project exists as a **practical learning exercise** focused on building an interactive web application from scratch **without using frameworks**.
+This project exists as a **practical web development learning exercise**.
 
-While developing this quiz, the goal was to practice fundamental web development concepts while also improving UI/UX design skills.
+The main goals are:
 
-It demonstrates how to:
+1. Strengthening JavaScript fundamentals
+2. Learning how to build interactive browser applications
+3. Improving UI/UX layout and visual hierarchy skills
+4. Understanding application state management
 
-- structure a simple web project
-- separate **HTML, CSS, and JavaScript**
-- create an interactive quiz flow
-- work with **arrays and objects**
-- handle user input via **radio buttons**
-- update the UI dynamically
-- manipulate the **DOM**
-- manage application state (score, progress, current question)
-- build a **responsive layout**
-- design a modern UI using gradients, shadows, and glass effects
-- debug application logic using `console.log`
+The quiz demonstrates how to:
 
-At the same time, the project explores how layout, spacing, and visual hierarchy influence user experience.
+* structure a small web application
+* separate **HTML, CSS, and JavaScript**
+* manage quiz state (score, progress, question index)
+* work with **arrays and objects**
+* dynamically update UI elements
+* handle user input via **radio buttons and forms**
+* manipulate the **DOM**
+* implement feedback states
+* build a **responsive layout**
+* design a modern glass-style interface
+* debug logic using `console.log`
 
 ---
 
 # Features
 
-The Trivia Quiz currently includes:
+Current functionality includes:
 
-- Multiple choice questions (radio buttons)
-- Submit button validation
-- Score tracking
-- Progress indicator (question counter)
-- Animated score progress bar
-- Restart quiz functionality
-- Feedback messages for correct and incorrect answers
-- Fully responsive layout (desktop / tablet / mobile)
-- Modern glass-style quiz card UI
-- Background image with gradient overlay
-- Clean centered layout for improved usability
+* Large question database (expandable)
+* Each quiz round uses **10 random questions**
+* No duplicate questions within a single round
+* Multiple choice answers (radio buttons)
+* Submit validation (cannot continue without selecting an answer)
+* Score tracking
+* Question progress indicator
+* Animated progress bar
+* Feedback messages for correct / incorrect answers
+* Final score screen
+* Restart quiz with **new random question set**
+* Fully responsive layout (desktop / tablet / mobile)
+* Glassmorphism styled quiz card
+* Gradient overlay background
+* Clean centered layout for usability
 
-The quiz content is stored in a structured JavaScript array, making it easy to add or modify questions.
+The quiz data is stored in a structured JavaScript array, making it easy to add new questions or modify existing ones.
 
 ---
 
 # Project Structure
 
-
+```
 trivia-quiz
 │
-├─ index.html
-├─ assets
-│ └─ trivia-bg-main.png
-├─ css
-│ └─ style.css
-└─ js
-└─ trivia.js
-
+├── index.html
+├── assets
+│   └── trivia-bg-main.png
+├── css
+│   └── style.css
+└── js
+    └── trivia.js
+```
 
 ---
 
 ## index.html
 
-Contains:
+Responsible for:
 
-- the main quiz layout
-- radio button answer structure
-- score and progress indicators
-- footer and accessibility structure
-- script and stylesheet linking
+* quiz layout structure
+* answer option markup
+* score and progress UI elements
+* accessibility-friendly semantic sections
+* linking stylesheets and scripts
 
 ---
 
 ## css/style.css
 
-Handles the full visual design, including:
+Handles visual presentation including:
 
-- centered layout using Flexbox
-- glassmorphism quiz card styling
-- gradient overlays and background image
-- answer option hover and selected states
-- button styles and interactions
-- responsive media queries
-- typography, spacing, and visual hierarchy
+* Flexbox centered layout
+* glassmorphism card design
+* gradients and background overlays
+* hover / selected answer states
+* button interactions
+* responsive media queries
+* spacing, typography, and visual hierarchy
 
 ---
 
@@ -113,125 +115,104 @@ Handles the full visual design, including:
 
 Contains:
 
-- quiz question data
-- quiz state logic
-- score calculation
-- question navigation
-- progress bar updates
-- restart functionality
-- DOM manipulation
-- debugging output using `console.log`
+* full question database
+* random quiz question generator
+* quiz state logic
+* score calculation
+* question navigation
+* progress bar animation
+* restart functionality
+* DOM manipulation
+* debugging output using `console.log`
 
 ---
 
 # How It Works
 
-All quiz questions are stored in a JavaScript array:
+All questions are stored in a JavaScript array:
 
 ```javascript
 const questions = [
   {
     question: "Example question?",
     answers: ["Option A", "Option B", "Option C", "Option D"],
-    correct: 2
+    correctIndex: 2
   }
 ];
+```
 
-The script then:
+At the start of each quiz:
 
-Displays the current question
+1. The question array is **randomly shuffled**
+2. The first **10 questions are selected**
+3. The quiz displays questions one by one
+4. User answers are validated
+5. Score and progress are updated dynamically
+6. A final result screen is shown after the last question
 
-Updates answer text dynamically
-
-Waits for the user to select an option
-
-Checks if the answer is correct
-
-Updates the score
-
-Moves to the next question
-
-Updates the progress bar
-
-Shows final score when the quiz ends
-
-This demonstrates basic application state management and dynamic UI updates.
+This demonstrates basic **application state management** and **dynamic UI rendering**.
 
 ---
 
 # Debugging
 
-During development, console.log() statements are used to display:
+During development, `console.log()` statements are used to monitor:
 
-when the quiz initializes
+* quiz initialization
+* current question index
+* selected answers
+* score updates
+* quiz completion
 
-current question index
+Open the browser developer tools to view debug output:
 
-selected answer
-
-score updates
-
-quiz completion
-
-You can view this output in the browser console:
-
+```
 F12 → Console
-
-This helps understand how the JavaScript logic controls the quiz flow step by step.
+```
 
 ---
 
 # Future Improvements
 
-Possible future upgrades:
+Planned upgrades may include:
 
-question categories
-
-timer per question
-
-sound effects
-
-animated transitions between questions
-
-score summary screen
-
-high score storage using LocalStorage
-
-dark / light mode toggle
-
-keyboard navigation support
-
-accessibility improvements
-
-dynamic question loading from an API
-
-difficulty levels
+* question categories
+* difficulty levels
+* answer order randomization
+* timer per question
+* animated transitions
+* sound effects
+* score percentage / rating system
+* high score storage using LocalStorage
+* dark / light mode toggle
+* keyboard navigation
+* accessibility improvements
+* loading questions from an external API
+* quiz settings menu
 
 ---
 
 # Status
 
-Learning project — actively improving while studying web development.
+Active learning project — continuously improving while studying web development.
 
-The quiz application is designed to evolve as new JavaScript concepts, UI techniques, and best practices are learned.
+The project will evolve as new JavaScript techniques, UI patterns, and best practices are learned.
 
 ---
 
 # Author
 
-Created as part of a personal web development learning journey.
+Created by **Dominique Striekwold** as part of a personal web development learning journey.
 
 ---
 
 # Attribution
 
-Original project created by Dominique Striekwold.
-
-If you reuse significant parts of this code, please provide attribution
-by linking to the original repository.
+If you reuse significant parts of this project, please provide attribution by linking to the original repository.
 
 ---
 
 # License
 
-This project is licensed under the MIT License — see the LICENSE file for details.
+This project is licensed under the **MIT License**.
+See the LICENSE file for more information.
