@@ -28,11 +28,13 @@ The main goals are:
 2. Learning how to build interactive browser applications
 3. Improving UI/UX layout and visual hierarchy skills
 4. Understanding application state management
+5. Learning how to structure scalable application data
 
 The quiz demonstrates how to:
 
 * structure a small web application
 * separate **HTML, CSS, and JavaScript**
+* separate **application logic from data**
 * manage quiz state (score, progress, question index)
 * work with **arrays and objects**
 * dynamically update UI elements
@@ -49,9 +51,16 @@ The quiz demonstrates how to:
 
 Current functionality includes:
 
-* Large question database (expandable)
+* **Large structured question database**
+* Questions divided into **difficulty levels:**
+
+  * Easy
+  * Medium
+  * Hard
+  * Expert
 * Each quiz round uses **10 random questions**
 * No duplicate questions within a single round
+* **Answer options are randomly shuffled**
 * Multiple choice answers (radio buttons)
 * Submit validation (cannot continue without selecting an answer)
 * Score tracking
@@ -65,7 +74,7 @@ Current functionality includes:
 * Gradient overlay background
 * Clean centered layout for usability
 
-The quiz data is stored in a structured JavaScript array, making it easy to add new questions or modify existing ones.
+The quiz database is now separated from the quiz logic to improve **code readability and maintainability**.
 
 ---
 
@@ -80,6 +89,7 @@ trivia-quiz
 ├── css
 │   └── style.css
 └── js
+    ├── questions.js
     └── trivia.js
 ```
 
@@ -111,13 +121,38 @@ Handles visual presentation including:
 
 ---
 
-## js/trivia.js
+## js/questions.js
 
 Contains:
 
-* full question database
-* random quiz question generator
-* quiz state logic
+* full structured question database
+* questions divided by **difficulty levels**
+* question objects with:
+
+```javascript
+{
+  question: "Example question?",
+  answers: ["Option A", "Option B", "Option C", "Option D"],
+  correctIndex: 2
+}
+```
+
+Separating quiz data into its own file improves:
+
+* maintainability
+* scalability
+* readability
+* future database/API integration
+
+---
+
+## js/trivia.js
+
+Contains all **quiz application logic**, including:
+
+* random question selection
+* answer order randomization (shuffle logic)
+* quiz state management
 * score calculation
 * question navigation
 * progress bar animation
@@ -129,28 +164,21 @@ Contains:
 
 # How It Works
 
-All questions are stored in a JavaScript array:
-
-```javascript
-const questions = [
-  {
-    question: "Example question?",
-    answers: ["Option A", "Option B", "Option C", "Option D"],
-    correctIndex: 2
-  }
-];
-```
-
 At the start of each quiz:
 
-1. The question array is **randomly shuffled**
-2. The first **10 questions are selected**
-3. The quiz displays questions one by one
-4. User answers are validated
+1. Questions are selected randomly from the database
+2. The quiz picks **10 questions**
+3. **Answer options are shuffled per question**
+4. The user answers questions one by one
 5. Score and progress are updated dynamically
 6. A final result screen is shown after the last question
 
-This demonstrates basic **application state management** and **dynamic UI rendering**.
+This demonstrates:
+
+* application state management
+* dynamic UI rendering
+* basic game logic
+* scalable data architecture
 
 ---
 
@@ -159,12 +187,13 @@ This demonstrates basic **application state management** and **dynamic UI render
 During development, `console.log()` statements are used to monitor:
 
 * quiz initialization
+* selected random questions
+* shuffled answers
 * current question index
-* selected answers
 * score updates
 * quiz completion
 
-Open the browser developer tools to view debug output:
+Open browser developer tools:
 
 ```
 F12 → Console
@@ -177,26 +206,26 @@ F12 → Console
 Planned upgrades may include:
 
 * question categories
-* difficulty levels
-* answer order randomization
-* timer per question
+* advanced difficulty scaling
+* timed quiz mode
 * animated transitions
 * sound effects
+* streak bonus system
 * score percentage / rating system
-* high score storage using LocalStorage
+* leaderboard using LocalStorage
 * dark / light mode toggle
 * keyboard navigation
 * accessibility improvements
-* loading questions from an external API
-* quiz settings menu
+* loading questions from external API
+* multiplayer quiz mode
 
 ---
 
 # Status
 
-Active learning project — continuously improving while studying web development.
+Active learning project — continuously evolving while studying web development.
 
-The project will evolve as new JavaScript techniques, UI patterns, and best practices are learned.
+The project is transitioning from a **learning exercise** into a **fully structured interactive web application**.
 
 ---
 
