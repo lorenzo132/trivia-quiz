@@ -27,10 +27,22 @@ Built as part of a web development learning journey.
         <span class="window-dot"></span>
       </div>
 
+      <div id="resumeOverlay" class="resume-overlay" style="display: none;">
+        <div class="resume-modal">
+          <h2>Welcome Back!</h2>
+          <p>You have an unfinished quiz. Would you like to continue where you left off?</p>
+          <div class="resume-actions">
+            <button id="resumeBtn" class="resume-btn" type="button">Resume Quiz</button>
+            <button id="newQuizBtn" class="new-quiz-btn" type="button">Start New</button>
+          </div>
+        </div>
+      </div>
+
       <div class="quiz-content">
         <header class="quiz-header">
           <div class="quiz-meta">
             <p id="progress">Question 1 / 10</p>
+            <button id="scoreboardToggle" class="scoreboard-toggle" type="button">🏆 Scoreboard</button>
             <p id="score">Score: 0</p>
           </div>
 
@@ -72,6 +84,22 @@ Built as part of a web development learning journey.
 
           <button id="restartBtn" class="restart-btn" type="button">Restart Quiz</button>
         </section>
+
+        <div id="scoreboard" class="scoreboard-panel">
+          <h2>🏆 Top Scores</h2>
+          <table id="scoreboardTable" class="scoreboard-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Score</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody id="scoreboardBody">
+              <tr><td colspan="3" class="empty-scoreboard">No scores yet — finish a quiz!</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <footer class="site-footer">
